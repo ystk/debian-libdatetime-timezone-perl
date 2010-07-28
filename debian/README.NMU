@@ -1,0 +1,17 @@
+If you want to do NMU for this package, please be careful.  The version number
+of the package have the Olson time zone DB version after last plus.
+
+
+If you need to update the time zone database:
+
+1. Change package version number and db version number, i.e. 0.68-1+2007x
+2. Call script debian/tools/update-tzdata.sh
+
+
+If you need to release NMU without updating time zones:
+
+1. Change package version number without bumping the db version number,
+i.e. 0.69-0.1+2007h
+
+
+Always call dpkg-buildpackage (debuild, pbuilder, etc) with -sa argument.

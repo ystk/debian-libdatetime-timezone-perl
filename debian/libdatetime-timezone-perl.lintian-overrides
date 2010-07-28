@@ -1,0 +1,5 @@
+# long windows registry key ...
+libdatetime-timezone-perl: manpage-has-errors-from-man usr/share/man/man3/DateTime::TimeZone::Local::Win32.3pm.gz 173: warning [p 1, 7.7i]: can't break line
+
+# "Viet Nam" shouldn't be "Viet Name"
+libdatetime-timezone-perl: spelling-error-in-manpage usr/share/man/man3/DateTime::TimeZone::Catalog.3pm.gz Nam Name

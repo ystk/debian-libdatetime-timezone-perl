@@ -1,0 +1,27 @@
+Source: libdatetime-timezone-perl
+Section: perl
+Priority: extra
+Build-Depends: debhelper (>= 7)
+Build-Depends-Indep: perl, libdatetime-perl,
+ libclass-singleton-perl, libparams-validate-perl,
+ libtest-output-perl, perl (>= 5.10.1) | libtest-simple-perl (>= 0.88)
+Maintainer: Debian Perl Group <pkg-perl-maintainers@lists.alioth.debian.org>
+Uploaders: Piotr Roszatycki <dexter@debian.org>,
+ Krzysztof Krzyżaniak (eloy) <eloy@debian.org>,
+ gregor herrmann <gregoa@debian.org>, Jonathan Yu <jawnsy@cpan.org>
+Standards-Version: 3.9.1
+Homepage: http://datetime.perl.org/
+Vcs-Svn: svn://svn.debian.org/pkg-perl/trunk/libdatetime-timezone-perl/
+Vcs-Browser: http://svn.debian.org/viewsvn/pkg-perl/trunk/libdatetime-timezone-perl/
+
+Package: libdatetime-timezone-perl
+Architecture: all
+Depends: ${misc:Depends}, ${perl:Depends}, libclass-singleton-perl, libparams-validate-perl
+Description: framework exposing the Olson time zone database to Perl
+ DateTime::TimeZone is a Perl module framework providing an interface to the
+ Olson time zone database. It exposes the database as a set of modules, one
+ for each time zone defined, allowing for various optimizations in doing time
+ zone calculations.
+ .
+ The Olson time zone database is the best available source for worldwide time
+ zone information and is available from <URL:ftp://elsie.nci.nih.gov/pub/>.
