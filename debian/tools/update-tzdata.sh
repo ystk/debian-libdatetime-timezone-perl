@@ -5,10 +5,14 @@ die () {
     exit 1
 }
 
+#HOST=elsie.nci.nih.gov/pub
+HOST=munnari.oz.au/pub
+#HOST=ftp.iana.org/tz/releases
+
 dh_testdir debian/changelog || die "You are not in the source package's root directory."
 
 debdbversion=$(head -n1 debian/changelog  | sed 's/^.*+\([0-9a-z]*\)).*$/\1/')
-updbversion=$(wget -q -O- ftp://elsie.nci.nih.gov/pub/ | grep tzdata | perl -pe 's/.+".+tzdata(.+)\.tar.gz".+/$1/')
+updbversion=$(wget -q -O- ftp://${HOST}/ | grep tzdata | perl -pe 's/.+".+tzdata(.+)\.tar.gz".+/$1/')
 
 if [ "$debdbversion" != "$updbversion" ] ; then
     echo "Debian dbversion $debdbversion != upstream dbversion $updbversion."
@@ -28,7 +32,7 @@ mkdir -p debian/tzdata || die "Cannot mkdir debian/tzdata."
 pushd debian/tzdata || die "Cannot cd debian/tzdata."
 
     file=tzdata$debdbversion.tar.gz
-    url=ftp://elsie.nci.nih.gov/pub/$file
+    url=ftp://${HOST}/$file
 
     rm -f *
     

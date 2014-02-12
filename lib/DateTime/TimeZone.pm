@@ -1,18 +1,19 @@
 package DateTime::TimeZone;
+{
+  $DateTime::TimeZone::VERSION = '1.58';
+}
 
 use 5.006;
 
 use strict;
 use warnings;
 
-our $VERSION = '1.20';
-
 use DateTime::TimeZone::Catalog;
 use DateTime::TimeZone::Floating;
 use DateTime::TimeZone::Local;
 use DateTime::TimeZone::OffsetOnly;
 use DateTime::TimeZone::UTC;
-use Params::Validate qw( validate validate_pos SCALAR ARRAYREF BOOLEAN );
+use Params::Validate 0.72 qw( validate validate_pos SCALAR ARRAYREF BOOLEAN );
 
 use constant INFINITY => 100**1000;
 use constant NEG_INFINITY => -1 * ( 100**1000 );
@@ -46,7 +47,7 @@ sub new {
     unless ( $p{name} =~ m,/,
         || $SpecialName{ $p{name} } ) {
         if ( $p{name} eq 'floating' ) {
-            return DateTime::TimeZone::Floating->new;
+            return DateTime::TimeZone::Floating->instance;
         }
 
         if ( $p{name} eq 'local' ) {
@@ -54,7 +55,7 @@ sub new {
         }
 
         if ( $p{name} eq 'UTC' || $p{name} eq 'Z' ) {
-            return DateTime::TimeZone::UTC->new;
+            return DateTime::TimeZone::UTC->instance;
         }
 
         return DateTime::TimeZone::OffsetOnly->new( offset => $p{name} );
@@ -524,7 +525,7 @@ sub names_in_category {
 
     return wantarray
         ? @{ $DateTime::TimeZone::Catalog::CATEGORIES{ $_[0] } }
-        : [ $DateTime::TimeZone::Catalog::CATEGORIES{ $_[0] } ];
+        : $DateTime::TimeZone::Catalog::CATEGORIES{ $_[0] };
 }
 
 sub countries {
@@ -548,11 +549,19 @@ sub names_in_country {
 
 1;
 
+# ABSTRACT: Time zone object base class and factory
+
 __END__
+
+=pod
 
 =head1 NAME
 
 DateTime::TimeZone - Time zone object base class and factory
+
+=head1 VERSION
+
+version 1.58
 
 =head1 SYNOPSIS
 
@@ -648,6 +657,11 @@ the local time's Rata Die days and seconds.  This should only be done
 when the corresponding UTC time is not yet known, because local times
 can be ambiguous due to Daylight Saving Time rules.
 
+=head2 $tz->is_dst_for_datetime( $dt )
+
+Given a C<DateTime> object, this method returns true if the DateTime is
+currently in Daylight Saving Time.
+
 =head2 $tz->name
 
 Returns the name of the time zone.
@@ -722,9 +736,6 @@ that category, without the category portion.  So the list for the
 "Kentucky/Monticello", and "New_York". In scalar context, it returns
 an array reference, while in list context it returns an array.
 
-The list is returned in order of population by zone, which should mean
-that this order will be the best to use for most UIs.
-
 =head2 DateTime::TimeZone->countries()
 
 Returns a sorted list of all the valid country codes (in lower-case)
@@ -740,6 +751,11 @@ Given a two-letter ISO3166 country code, this method returns a list of
 time zones used in that country. The country code may be of any
 case. In scalar context, it returns an array reference, while in list
 context it returns an array.
+
+This list is returned in an order vaguely based on geography and
+population. In general, the least used zones come last, but there are not
+guarantees of a specific order from one release to the next. This order is
+probably the best option for presenting zones names to end users.
 
 =head2 DateTime::TimeZone->offset_as_seconds( $offset )
 
@@ -772,8 +788,8 @@ your module with Storable.
 
 =head1 SUPPORT
 
-Support for this module is provided via the datetime@perl.org email
-list. See http://datetime.perl.org/?MailingList for details.
+Support for this module is provided via the datetime@perl.org email list. See
+http://datetime.perl.org/wiki/datetime/page/Mailing_List for details.
 
 Please submit bugs to the CPAN RT system at
 http://rt.cpan.org/NoAuth/ReportBug.html?Queue=datetime%3A%3Atimezone
@@ -800,24 +816,11 @@ To donate, log into PayPal and send money to autarch@urth.org or use
 the button on this page:
 L<http://www.urth.org/~autarch/fs-donation.html>
 
-=head1 AUTHOR
-
-Dave Rolsky <autarch@urth.org>
-
 =head1 CREDITS
 
 This module was inspired by Jesse Vincent's work on
 Date::ICal::Timezone, and written with much help from the
 datetime@perl.org list.
-
-=head1 COPYRIGHT
-
-Copyright (c) 2003-2008 David Rolsky.  All rights reserved.  This
-program is free software; you can redistribute it and/or modify it
-under the same terms as Perl itself.
-
-The full text of the license can be found in the LICENSE file included
-with this module.
 
 =head1 SEE ALSO
 
@@ -829,5 +832,16 @@ The tools directory of the DateTime::TimeZone distribution includes
 two scripts that may be of interest to some people.  They are
 parse_olson and tests_from_zdump.  Please run them with the --help
 flag to see what they can be used for.
+
+=head1 AUTHOR
+
+Dave Rolsky <autarch@urth.org>
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2013 by Dave Rolsky.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
 
 =cut

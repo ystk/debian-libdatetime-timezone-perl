@@ -1,9 +1,12 @@
 package DateTime::TimeZone::Local::Win32;
+{
+  $DateTime::TimeZone::Local::Win32::VERSION = '1.58';
+}
 
 use strict;
 use warnings;
 
-use base 'DateTime::TimeZone::Local';
+use parent 'DateTime::TimeZone::Local';
 
 use Win32::TieRegistry ( 'KEY_READ', Delimiter => q{/} );
 
@@ -35,6 +38,7 @@ sub EnvVars { return 'TZ' }
         'Azerbaijan Standard Time'        => 'Asia/Baku',
         'Azores'                          => 'Atlantic/Azores',
         'Azores Standard Time'            => 'Atlantic/Azores',
+        'Bahia Standard Time'             => 'America/Bahia',
         'Bangkok'                         => 'Asia/Bangkok',
         'Bangkok Standard Time'           => 'Asia/Bangkok',
         'Bangladesh Standard Time'        => 'Asia/Dhaka',
@@ -100,9 +104,11 @@ sub EnvVars { return 'TZ' }
         'Israel'                          => 'Asia/Jerusalem',
         'Israel Standard Time'            => 'Asia/Jerusalem',
         'Jordan Standard Time'            => 'Asia/Amman',
+        'Kaliningrad Standard Time'       => 'Europe/Kaliningrad',
         'Kamchatka Standard Time'         => 'Asia/Kamchatka',
         'Korea'                           => 'Asia/Seoul',
         'Korea Standard Time'             => 'Asia/Seoul',
+        'Magadan Standard Time'           => 'Asia/Magadan',
         'Mauritius Standard Time'         => 'Indian/Mauritius',
         'Mexico'                          => 'America/Mexico_City',
         'Mexico Standard Time'            => 'America/Mexico_City',
@@ -155,6 +161,7 @@ sub EnvVars { return 'TZ' }
         'South Africa Standard Time'      => 'Africa/Harare',
         'Sri Lanka'                       => 'Asia/Colombo',
         'Sri Lanka Standard Time'         => 'Asia/Colombo',
+        'Syria Standard Time'             => 'Asia/Damascus',
         'Sydney Standard Time'            => 'Australia/Sydney',
         'Taipei'                          => 'Asia/Taipei',
         'Taipei Standard Time'            => 'Asia/Taipei',
@@ -163,6 +170,7 @@ sub EnvVars { return 'TZ' }
         'Tokyo'                           => 'Asia/Tokyo',
         'Tokyo Standard Time'             => 'Asia/Tokyo',
         'Tonga Standard Time'             => 'Pacific/Tongatapu',
+        'Turkey Standard Time'            => 'Europe/Istanbul',
         'Ulaanbaatar Standard Time'       => 'Asia/Ulaanbaatar',
         'US Eastern'                      => 'America/Indianapolis',
         'US Eastern Standard Time'        => 'America/Indianapolis',
@@ -252,11 +260,19 @@ sub _FindWindowsTZName {
 
 1;
 
+# ABSTRACT: Determine the local system's time zone on Windows
+
 __END__
+
+=pod
 
 =head1 NAME
 
 DateTime::TimeZone::Local::Win32 - Determine the local system's time zone on Windows
+
+=head1 VERSION
+
+version 1.58
 
 =head1 SYNOPSIS
 
@@ -315,15 +331,13 @@ of "SOFTWARE/Microsoft/Windows/CurrentVersion/Time Zones/"
 
 =head1 AUTHOR
 
-Dave Rolsky, <autarch@urth.org>
+Dave Rolsky <autarch@urth.org>
 
-=head1 COPYRIGHT & LICENSE
+=head1 COPYRIGHT AND LICENSE
 
-Copyright (c) 2003-2008 David Rolsky.  All rights reserved.  This
-program is free software; you can redistribute it and/or modify it
-under the same terms as Perl itself.
+This software is copyright (c) 2013 by Dave Rolsky.
 
-The full text of the license can be found in the LICENSE file included
-with this module.
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
 
 =cut

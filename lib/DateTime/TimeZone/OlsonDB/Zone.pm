@@ -1,4 +1,7 @@
 package DateTime::TimeZone::OlsonDB::Zone;
+{
+  $DateTime::TimeZone::OlsonDB::Zone::VERSION = '1.58';
+}
 
 use strict;
 use warnings;
@@ -8,7 +11,7 @@ use DateTime::TimeZone::OlsonDB;
 use DateTime::TimeZone::OlsonDB::Change;
 use DateTime::TimeZone::OlsonDB::Observance;
 
-use List::Util qw( first );
+use List::Util qw( first max );
 use Params::Validate qw( validate SCALAR ARRAYREF );
 
 sub new {
@@ -32,6 +35,19 @@ sub new {
 }
 
 sub name { $_[0]->{name} }
+
+sub last_rules_year {
+    my $self = shift;
+    my $odb  = shift;
+
+    my $last_rule = $self->{observances}[-1]{rules};
+
+    return unless $last_rule;
+
+    my @rules = $odb->rules_by_name($last_rule);
+
+    return $rules[-1]->min_year();
+}
 
 sub expand_observances {
     my $self     = shift;
