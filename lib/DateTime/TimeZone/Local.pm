@@ -1,11 +1,12 @@
 package DateTime::TimeZone::Local;
+{
+  $DateTime::TimeZone::Local::VERSION = '1.58';
+}
 
 use strict;
 use warnings;
 
-use vars qw( $VERSION );
-$VERSION = '0.01';
-
+use Class::Load qw( is_class_loaded load_class try_load_class );
 use DateTime::TimeZone;
 use File::Spec;
 
@@ -45,23 +46,13 @@ sub TimeZone {
         my $os_name = $subclass{$^O} || $^O;
         my $subclass = $class . '::' . $os_name;
 
-        return $subclass if $subclass->can('Methods');
+        return $subclass if is_class_loaded($subclass);
 
-        local $@;
-        local $SIG{__DIE__};
-        eval "use $subclass";
-        if ( my $e = $@ ) {
-            if ( $e =~ /locate.+$os_name/ ) {
-                $subclass = $class . '::' . 'Unix';
+        return $subclass if try_load_class($subclass);
 
-                eval "use $subclass";
-                my $e2 = $@;
-                die $e2 if $e2;
-            }
-            else {
-                die $e;
-            }
-        }
+        $subclass = $class . '::Unix';
+
+        load_class($subclass);
 
         return $subclass;
     }
@@ -96,11 +87,19 @@ sub _IsValidName {
 
 1;
 
+# ABSTRACT: Determine the local system's time zone
+
 __END__
+
+=pod
 
 =head1 NAME
 
 DateTime::TimeZone::Local - Determine the local system's time zone
+
+=head1 VERSION
+
+version 1.58
 
 =head1 SYNOPSIS
 
@@ -193,15 +192,13 @@ Here is a simple example subclass:
 
 =head1 AUTHOR
 
-Dave Rolsky, <autarch@urth.org>
+Dave Rolsky <autarch@urth.org>
 
-=head1 COPYRIGHT & LICENSE
+=head1 COPYRIGHT AND LICENSE
 
-Copyright (c) 2003-2008 David Rolsky.  All rights reserved.  This
-program is free software; you can redistribute it and/or modify it
-under the same terms as Perl itself.
+This software is copyright (c) 2013 by Dave Rolsky.
 
-The full text of the license can be found in the LICENSE file included
-with this module.
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
 
 =cut

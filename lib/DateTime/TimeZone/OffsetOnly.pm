@@ -1,12 +1,12 @@
 package DateTime::TimeZone::OffsetOnly;
+{
+  $DateTime::TimeZone::OffsetOnly::VERSION = '1.58';
+}
 
 use strict;
+use warnings;
 
-use vars qw ($VERSION);
-$VERSION = 0.02;
-
-use DateTime::TimeZone;
-use base 'DateTime::TimeZone';
+use parent 'DateTime::TimeZone';
 
 use DateTime::TimeZone::UTC;
 use Params::Validate qw( validate SCALAR );
@@ -72,11 +72,19 @@ sub STORABLE_thaw {
 
 1;
 
+# ABSTRACT: A DateTime::TimeZone object that just contains an offset
+
 __END__
+
+=pod
 
 =head1 NAME
 
 DateTime::TimeZone::OffsetOnly - A DateTime::TimeZone object that just contains an offset
+
+=head1 VERSION
+
+version 1.58
 
 =head1 SYNOPSIS
 
@@ -113,15 +121,13 @@ Both of these methods return the offset in string form.
 
 =head1 AUTHOR
 
-Dave Rolsky, <autarch@urth.org>
+Dave Rolsky <autarch@urth.org>
 
-=head1 COPYRIGHT & LICENSE
+=head1 COPYRIGHT AND LICENSE
 
-Copyright (c) 2003-2008 David Rolsky.  All rights reserved.  This
-program is free software; you can redistribute it and/or modify it
-under the same terms as Perl itself.
+This software is copyright (c) 2013 by Dave Rolsky.
 
-The full text of the license can be found in the LICENSE file included
-with this module.
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
 
 =cut
