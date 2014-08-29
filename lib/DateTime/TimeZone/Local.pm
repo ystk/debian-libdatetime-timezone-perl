@@ -1,8 +1,5 @@
 package DateTime::TimeZone::Local;
-{
-  $DateTime::TimeZone::Local::VERSION = '1.58';
-}
-
+$DateTime::TimeZone::Local::VERSION = '1.73';
 use strict;
 use warnings;
 
@@ -37,6 +34,7 @@ sub TimeZone {
         NetWare => 'Win32',
         symbian => 'Win32',
         dos     => 'OS2',
+        android => 'Android',
         cygwin  => 'Unix',
     );
 
@@ -93,13 +91,15 @@ __END__
 
 =pod
 
+=encoding UTF-8
+
 =head1 NAME
 
 DateTime::TimeZone::Local - Determine the local system's time zone
 
 =head1 VERSION
 
-version 1.58
+version 1.73
 
 =head1 SYNOPSIS
 
@@ -164,7 +164,7 @@ list of env vars to be checked by C<< $class->FromEnv() >>.
 =head2 $class->_IsValidName($name)
 
 Given a possible time zone name, this returns a boolean indicating
-whether or not the the name looks valid. It always return false for
+whether or not the name looks valid. It always return false for
 "local" in order to avoid infinite loops.
 
 =head1 EXAMPLE SUBCLASS
@@ -196,7 +196,7 @@ Dave Rolsky <autarch@urth.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2013 by Dave Rolsky.
+This software is copyright (c) 2014 by Dave Rolsky.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
