@@ -3,8 +3,7 @@ Maintainer: Debian Perl Group <pkg-perl-maintainers@lists.alioth.debian.org>
 Uploaders: Krzysztof Krzyżaniak (eloy) <eloy@debian.org>,
            gregor herrmann <gregoa@debian.org>,
            Jonathan Yu <jawnsy@cpan.org>,
-           Ansgar Burchardt <ansgar@debian.org>,
-           Nicholas Bamber <nicholas@periapt.co.uk>
+           Ansgar Burchardt <ansgar@debian.org>
 Section: perl
 Priority: optional
 Build-Depends: debhelper (>= 8)
@@ -12,11 +11,15 @@ Build-Depends-Indep: perl,
                      libclass-load-perl,
                      libclass-singleton-perl,
                      libdatetime-perl,
+                     liblist-allutils-perl,
                      libparams-validate-perl,
-                     libtest-output-perl
-Standards-Version: 3.9.3
+                     libtest-fatal-perl,
+                     libtest-output-perl,
+                     libtest-requires-perl,
+                     libtest-taint-perl
+Standards-Version: 3.9.5
 Vcs-Browser: http://anonscm.debian.org/gitweb/?p=pkg-perl/packages/libdatetime-timezone-perl.git
-Vcs-Git: git://git.debian.org/pkg-perl/packages/libdatetime-timezone-perl.git
+Vcs-Git: git://anonscm.debian.org/pkg-perl/packages/libdatetime-timezone-perl.git
 Homepage: http://datetime.perl.org/
 
 Package: libdatetime-timezone-perl
@@ -25,9 +28,8 @@ Depends: ${misc:Depends},
          ${perl:Depends},
          libclass-load-perl,
          libclass-singleton-perl,
-         libparams-validate-perl,
-         perl
-Pre-Depends: dpkg (>= 1.15.6~)
+         liblist-allutils-perl,
+         libparams-validate-perl
 Description: framework exposing the Olson time zone database to Perl
  DateTime::TimeZone is a Perl module framework providing an interface to the
  Olson time zone database. It exposes the database as a set of modules, one

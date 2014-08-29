@@ -1,26 +1,93 @@
-libdatetime-timezone-perl (1:1.58-1+2013h) stable-proposed-updates; urgency=low
+libdatetime-timezone-perl (1:1.73-1+2014f) unstable; urgency=medium
 
-  * Update to version(s 2013g and) 2013h of the Olson database.
+  * New upstream release, based on version 2014f of the Olson database.
 
- -- gregor herrmann <gregoa@debian.org>  Tue, 05 Nov 2013 17:56:20 +0100
+ -- gregor herrmann <gregoa@debian.org>  Sat, 09 Aug 2014 16:09:23 +0200
 
-libdatetime-timezone-perl (1:1.58-1+2013f) stable-proposed-updates; urgency=low
+libdatetime-timezone-perl (1:1.72-1+2014e) unstable; urgency=medium
 
-  * Update to versions 2013e and 2013f of the Olson database.
+  * New upstream release.
 
- -- gregor herrmann <gregoa@debian.org>  Sat, 05 Oct 2013 13:19:30 +0200
+ -- gregor herrmann <gregoa@debian.org>  Mon, 04 Aug 2014 00:29:07 +0200
 
-libdatetime-timezone-perl (1:1.58-1+2013d) stable-proposed-updates; urgency=low
+libdatetime-timezone-perl (1:1.71-1+2014e) unstable; urgency=high
 
-  * Update to version 2013d of the Olson database.
+  * New upstream release, based on version 2014e of the Olson database.
+  * Add (build) dependency on liblist-allutils-perl.
+  * Set urgency to high due to imminent changes.
 
- -- gregor herrmann <gregoa@debian.org>  Sat, 10 Aug 2013 21:04:07 +0200
+ -- gregor herrmann <gregoa@debian.org>  Sun, 22 Jun 2014 10:18:06 +0200
 
-libdatetime-timezone-perl (1:1.58-1+2013c) stable-proposed-updates; urgency=low
+libdatetime-timezone-perl (1:1.70-1+2014d) unstable; urgency=medium
 
-  * Update to version 2013c of the Olson database.
+  * New upstream release, based on version 2014d of the Olson database.
+    No actual changes to the timezone data.
 
- -- gregor herrmann <gregoa@debian.org>  Wed, 22 May 2013 16:56:52 +0200
+ -- gregor herrmann <gregoa@debian.org>  Mon, 02 Jun 2014 01:29:34 +0200
+
+libdatetime-timezone-perl (1:1.69-1+2014c) unstable; urgency=high
+
+  * New upstream release, based on version 2014c of the Olson database.
+  * Add build-dependency on libtest-taint-perl. Enables another test.
+  * Set urgency to high, changes to Africa/Cairo are effective tomorrow.
+
+ -- gregor herrmann <gregoa@debian.org>  Wed, 14 May 2014 17:32:14 +0200
+
+libdatetime-timezone-perl (1:1.65-1+2014a) unstable; urgency=medium
+
+  * debian/control: remove Nicholas Bamber from Uploaders on request of
+    the MIA team.
+  * Strip trailing slash from metacpan URLs.
+
+  * New upstream release, based on version 2014a of the Olson database.
+
+ -- gregor herrmann <gregoa@debian.org>  Mon, 10 Mar 2014 17:11:27 +0100
+
+libdatetime-timezone-perl (1:1.64-1+2013h) unstable; urgency=medium
+
+  * Drop xz compression for {binary,source} package, set by default by
+    dpkg since 1.17.{0,6}.
+
+  * New upstream release.
+    Fixes "DateTime::TimeZone::Local malfunctions under taint mode
+    (perl -T)" (Closes: #737265)
+  * Update years of copyright.
+  * Add new build dependencies.
+
+ -- gregor herrmann <gregoa@debian.org>  Fri, 14 Feb 2014 22:15:34 +0100
+
+libdatetime-timezone-perl (1:1.63-1+2013h) unstable; urgency=low
+
+  * New upstream release, based on version 2013h of the Olson database.
+  * Declare compliance with Debian Policy 3.9.5.
+
+ -- gregor herrmann <gregoa@debian.org>  Mon, 28 Oct 2013 19:20:50 +0100
+
+libdatetime-timezone-perl (1:1.62-1+2013f) unstable; urgency=low
+
+  * New upstream release, based on version 2013f of the Olson database.
+  * Remove unversioned "perl" from Depends.
+  * debian/control: drop Pre-Depends on old dpkg version.
+
+ -- gregor herrmann <gregoa@debian.org>  Mon, 30 Sep 2013 15:36:15 +0200
+
+libdatetime-timezone-perl (1:1.60-1+2013d) unstable; urgency=low
+
+  * New upstream release, based on version 2013d of the Olson database.
+
+ -- gregor herrmann <gregoa@debian.org>  Mon, 08 Jul 2013 19:51:28 +0200
+
+libdatetime-timezone-perl (1:1.59-1+2013c) unstable; urgency=low
+
+  [ Salvatore Bonaccorso ]
+  * Change Vcs-Git to canonical URI (git://anonscm.debian.org)
+  * Change search.cpan.org based URIs to metacpan.org based URIs
+
+  [ gregor herrmann ]
+  * New upstream release, based on version 2013c of the Olson database.
+  * Set Standards-Version to 3.9.4 (no changes).
+
+ -- gregor herrmann <gregoa@debian.org>  Sat, 11 May 2013 22:11:15 +0200
 
 libdatetime-timezone-perl (1:1.58-1+2013b) unstable; urgency=low
 
