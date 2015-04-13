@@ -1,15 +1,15 @@
 
 BEGIN {
-  unless ($ENV{RELEASE_TESTING}) {
+  unless ($ENV{AUTHOR_TESTING}) {
     require Test::More;
-    Test::More::plan(skip_all => 'these tests are for release candidate testing');
+    Test::More::plan(skip_all => 'these tests are for testing by the author');
   }
 }
 
 use strict;
 use warnings;
 
-# this test was generated with Dist::Zilla::Plugin::Test::NoTabs 0.08
+# this test was generated with Dist::Zilla::Plugin::Test::NoTabs 0.09
 
 use Test::More 0.88;
 use Test::NoTabs;
@@ -21,40 +21,22 @@ my @files = (
     'lib/DateTime/TimeZone/Africa/Addis_Ababa.pm',
     'lib/DateTime/TimeZone/Africa/Algiers.pm',
     'lib/DateTime/TimeZone/Africa/Asmara.pm',
-    'lib/DateTime/TimeZone/Africa/Bangui.pm',
     'lib/DateTime/TimeZone/Africa/Bissau.pm',
-    'lib/DateTime/TimeZone/Africa/Blantyre.pm',
-    'lib/DateTime/TimeZone/Africa/Brazzaville.pm',
-    'lib/DateTime/TimeZone/Africa/Bujumbura.pm',
     'lib/DateTime/TimeZone/Africa/Cairo.pm',
     'lib/DateTime/TimeZone/Africa/Casablanca.pm',
     'lib/DateTime/TimeZone/Africa/Ceuta.pm',
     'lib/DateTime/TimeZone/Africa/Dar_es_Salaam.pm',
     'lib/DateTime/TimeZone/Africa/Djibouti.pm',
-    'lib/DateTime/TimeZone/Africa/Douala.pm',
     'lib/DateTime/TimeZone/Africa/El_Aaiun.pm',
-    'lib/DateTime/TimeZone/Africa/Gaborone.pm',
-    'lib/DateTime/TimeZone/Africa/Harare.pm',
     'lib/DateTime/TimeZone/Africa/Johannesburg.pm',
     'lib/DateTime/TimeZone/Africa/Kampala.pm',
     'lib/DateTime/TimeZone/Africa/Khartoum.pm',
-    'lib/DateTime/TimeZone/Africa/Kigali.pm',
-    'lib/DateTime/TimeZone/Africa/Kinshasa.pm',
     'lib/DateTime/TimeZone/Africa/Lagos.pm',
-    'lib/DateTime/TimeZone/Africa/Libreville.pm',
-    'lib/DateTime/TimeZone/Africa/Luanda.pm',
-    'lib/DateTime/TimeZone/Africa/Lubumbashi.pm',
-    'lib/DateTime/TimeZone/Africa/Lusaka.pm',
-    'lib/DateTime/TimeZone/Africa/Malabo.pm',
     'lib/DateTime/TimeZone/Africa/Maputo.pm',
-    'lib/DateTime/TimeZone/Africa/Maseru.pm',
-    'lib/DateTime/TimeZone/Africa/Mbabane.pm',
     'lib/DateTime/TimeZone/Africa/Mogadishu.pm',
     'lib/DateTime/TimeZone/Africa/Monrovia.pm',
     'lib/DateTime/TimeZone/Africa/Nairobi.pm',
     'lib/DateTime/TimeZone/Africa/Ndjamena.pm',
-    'lib/DateTime/TimeZone/Africa/Niamey.pm',
-    'lib/DateTime/TimeZone/Africa/Porto_Novo.pm',
     'lib/DateTime/TimeZone/Africa/Tripoli.pm',
     'lib/DateTime/TimeZone/Africa/Tunis.pm',
     'lib/DateTime/TimeZone/Africa/Windhoek.pm',
@@ -437,10 +419,10 @@ my @files = (
     't/20local-subclass.t',
     't/21stack-corruption.t',
     't/22taint-mode.t',
+    't/author-no-tabs.t',
     't/author-pod-spell.t',
     't/check_datetime_version.pl',
     't/release-eol.t',
-    't/release-no-tabs.t',
     't/release-pod-coverage.t',
     't/release-pod-linkcheck.t',
     't/release-pod-syntax.t',

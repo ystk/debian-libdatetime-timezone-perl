@@ -1,5 +1,5 @@
 package DateTime::TimeZone::Local;
-$DateTime::TimeZone::Local::VERSION = '1.73';
+$DateTime::TimeZone::Local::VERSION = '1.75';
 use strict;
 use warnings;
 
@@ -99,7 +99,7 @@ DateTime::TimeZone::Local - Determine the local system's time zone
 
 =head1 VERSION
 
-version 1.73
+version 1.75
 
 =head1 SYNOPSIS
 
