@@ -5,19 +5,18 @@ die () {
     exit 1
 }
 
-#HOST=elsie.nci.nih.gov/pub
-HOST=munnari.oz.au/pub
-#HOST=ftp.iana.org/tz/releases
+HOST=https://www.iana.org/time-zones
 
 dh_testdir debian/changelog || die "You are not in the source package's root directory."
 
 debdbversion=$(head -n1 debian/changelog  | sed 's/^.*+\([0-9a-z]*\)).*$/\1/')
-updbversion=$(wget -q -O- ftp://${HOST}/ | grep tzdata | perl -pe 's/.+".+tzdata(.+)\.tar.gz".+/$1/')
+updbversion=$(wget -q -O- ${HOST}/ | grep tzdata | perl -pe 's/.+".+tzdata(.+)\.tar.gz".+/$1/')
+dttzversion=$(awk '/version =/ {print $3;}' dist.ini)
 
 if [ "$debdbversion" != "$updbversion" ] ; then
     echo "Debian dbversion $debdbversion != upstream dbversion $updbversion."
     echo "You might want to change the Debian dbversion in debian/changelog."
-    read -p "Continue with $debdbversion (y/N)? " CONTINUE
+    read -p "Continue with $updbversion (y/N)? " CONTINUE
     case $CONTINUE in
         y|Y)
             ;;
@@ -31,8 +30,8 @@ mkdir -p debian/tzdata || die "Cannot mkdir debian/tzdata."
 
 pushd debian/tzdata || die "Cannot cd debian/tzdata."
 
-    file=tzdata$debdbversion.tar.gz
-    url=ftp://${HOST}/$file
+    file=tzdata$updbversion.tar.gz
+    url=${HOST}/repository/releases/$file
 
     rm -f *
     
@@ -50,4 +49,11 @@ pushd debian/tzdata || die "Cannot cd debian/tzdata."
 
 popd
 
-perl -Ilib.bak tools/parse_olson --dir debian/tzdata --version $debdbversion --clean
+perl tools/parse_olson --dir debian/tzdata --version $updbversion --clean
+
+# add VERSION to files
+for f in $(find lib/DateTime -name "*.pm"); do
+	grep -q "::VERSION = '$dttzversion';" $f && continue
+	module=$(echo $f | perl -pe 's{lib/DateTime/TimeZone/(.+)(?:(/.+))?.pm}{DateTime/TimeZone/$1$2}; s{/}{::}g;')
+	perl -pi -e "s{package $module;\s+}{$&\\\$${module}::VERSION = '$dttzversion';}m" $f
+done

@@ -1,0 +1,8 @@
+---
+Archive: CPAN
+Bug-Database: http://rt.cpan.org/Public/Dist/Display.html?Name=DateTime-TimeZone
+Bug-Submit: bug-datetime-timezone@rt.cpan.org
+Contact: Dave Rolsky <autarch@urth.org>
+Name: DateTime-TimeZone
+Repository: git://github.com/autarch/DateTime-TimeZone.git
+Repository-Browse: https://github.com/autarch/DateTime-TimeZone

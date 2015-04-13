@@ -1,3 +1,87 @@
+libdatetime-timezone-perl (1:1.75-2+2015b) unstable; urgency=medium
+
+  * Update to Olson database version 2015b.
+    Add patch debian/patches/olson-2015b, which updates the timezone *.pm
+    files, using upstream's tools/parse_olson script.
+    This update includes contemporary changes for Mongolia and Palestine which
+    will be effective on the last Saturday in March 2015.
+
+ -- gregor herrmann <gregoa@debian.org>  Sat, 21 Mar 2015 17:36:52 +0100
+
+libdatetime-timezone-perl (1:1.75-2+2015a) unstable; urgency=high
+
+  * Update to Olson database version 2015a.
+    Add patch debian/patches/olson-2015a, which updates the timezone *.pm
+    files, using upstream's tools/parse_olson script.
+  * Set urgency to high.
+    A change for America/Cancun becomes effective today.
+
+ -- gregor herrmann <gregoa@debian.org>  Sun, 01 Feb 2015 17:15:22 +0100
+
+libdatetime-timezone-perl (1:1.75-2+2014j) unstable; urgency=high
+
+  * Update to Olson database version 2014j.
+    Add patch debian/patches/olson-2014j, which updates the timezone *.pm
+    files, using upstream's tools/parse_olson script.
+  * Set urgency to high.
+    A change planned for America/Grand_Turk on 2014-11-02 at 02:00
+    was cancelled.
+
+ -- gregor herrmann <gregoa@debian.org>  Thu, 13 Nov 2014 15:16:50 +0100
+
+libdatetime-timezone-perl (1:1.75-2+2014i) unstable; urgency=high
+
+  * debian/tools/update-tzdata.sh:
+    - fix URLs
+    - change logic when the Debian db version differs from the upstream db
+      version: propose to continue with the latter
+    - add $DateTime::TimeZone::*::VERSION to created files
+
+  * Update to Olson database version 2014i.
+  * Set urgency to high, Belarus changes its time zone abbreviation on
+    2014-10-26 at 01:00.
+
+ -- gregor herrmann <gregoa@debian.org>  Sat, 25 Oct 2014 21:14:17 +0200
+
+libdatetime-timezone-perl (1:1.75-1+2014h) unstable; urgency=medium
+
+  * Imported upstream version 1.75.
+    Based on version 2014h of the Olson database; only changes to historical
+    data.
+  * Drop debian/tests/control, add Testsuite field to debian/control
+    instead.
+  * Declare compliance with Debian Policy 3.9.6.
+
+ -- gregor herrmann <gregoa@debian.org>  Wed, 01 Oct 2014 17:52:54 +0200
+
+libdatetime-timezone-perl (1:1.74-3+2014g) unstable; urgency=medium
+
+  * Move libdatetime-perl from Depends to Recommends to avoid a circular
+    dependency.
+
+ -- gregor herrmann <gregoa@debian.org>  Sat, 13 Sep 2014 00:51:16 +0200
+
+libdatetime-timezone-perl (1:1.74-2+2014g) unstable; urgency=medium
+
+  * debian/tests/control: add stanza for new runtime-deps-and-recommends
+    tests.
+  * Add libdatetime-perl to Depends.
+
+ -- gregor herrmann <gregoa@debian.org>  Fri, 12 Sep 2014 16:36:46 +0200
+
+libdatetime-timezone-perl (1:1.74-1+2014g) unstable; urgency=medium
+
+  [ Salvatore Bonaccorso ]
+  * Update Vcs-Browser URL to cgit web frontend
+
+  [ gregor herrmann ]
+  * Add debian/upstream/metadata
+
+  * New upstream release, based on version 2014g of the Olson database.
+  * Add autopkgtest control file.
+
+ -- gregor herrmann <gregoa@debian.org>  Sun, 07 Sep 2014 14:20:17 +0200
+
 libdatetime-timezone-perl (1:1.73-1+2014f) unstable; urgency=medium
 
   * New upstream release, based on version 2014f of the Olson database.

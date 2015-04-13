@@ -168,6 +168,9 @@ timezones
 versa
 Dave
 autarch
+Alexey
+Molchanov
+alexey
 devnull
 convert
 dpinkowitz
@@ -230,7 +233,6 @@ Moscow
 Gambier
 Boise
 HST
-Gaborone
 Atikokan
 Macau
 Edmonton
@@ -246,7 +248,6 @@ Port_Moresby
 Swift_Current
 Kabul
 Auckland
-Lusaka
 Efate
 Colombo
 Whitehorse
@@ -270,7 +271,6 @@ Kolkata
 Beirut
 Cuiaba
 La_Rioja
-Kigali
 Fakaofo
 Phnom_Penh
 Cayenne
@@ -296,8 +296,6 @@ Taipei
 Marquesas
 EST5EDT
 Ceuta
-Maseru
-Harare
 Eirunepe
 EST
 Tongatapu
@@ -322,15 +320,12 @@ Pyongyang
 Perth
 Muscat
 Cocos
-Douala
 Lima
 Oslo
 Kuching
 Tallinn
 London
-Lubumbashi
 Jayapura
-Malabo
 Kentucky
 Louisville
 Martinique
@@ -350,7 +345,6 @@ PST8PDT
 Bahia
 Tripoli
 Santiago
-Luanda
 Araguaina
 Omsk
 Mahe
@@ -366,7 +360,6 @@ Kathmandu
 Glace_Bay
 Noronha
 Magadan
-Porto_Novo
 Recife
 Ojinaga
 Rule
@@ -422,7 +415,6 @@ New_York
 Jerusalem
 Athens
 Maldives
-Mbabane
 Cayman
 Change
 Brisbane
@@ -441,9 +433,7 @@ Bermuda
 MET
 Winamac
 Madrid
-Brazzaville
 Urumqi
-Libreville
 Dawson
 Nipigon
 Irkutsk
@@ -454,7 +444,6 @@ Choibalsan
 Ust_Nera
 Catalog
 Maceio
-Niamey
 Warsaw
 Thule
 Pitcairn
@@ -482,12 +471,10 @@ Danmarkshavn
 Zaporozhye
 Madeira
 Cambridge_Bay
-Blantyre
 Ushuaia
 Vladivostok
 Dar_es_Salaam
 Aden
-Bujumbura
 Menominee
 Currie
 Moncton
@@ -507,7 +494,6 @@ Winnipeg
 Gaza
 Catamarca
 Tbilisi
-Bangui
 Apia
 Blanc_Sablon
 Prague
@@ -556,7 +542,6 @@ Accra
 Algiers
 Chisinau
 Yekaterinburg
-Kinshasa
 Aqtau
 Monticello
 Floating

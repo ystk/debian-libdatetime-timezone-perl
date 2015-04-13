@@ -17,9 +17,10 @@ Build-Depends-Indep: perl,
                      libtest-output-perl,
                      libtest-requires-perl,
                      libtest-taint-perl
-Standards-Version: 3.9.5
-Vcs-Browser: http://anonscm.debian.org/gitweb/?p=pkg-perl/packages/libdatetime-timezone-perl.git
+Standards-Version: 3.9.6
+Vcs-Browser: https://anonscm.debian.org/cgit/pkg-perl/packages/libdatetime-timezone-perl.git
 Vcs-Git: git://anonscm.debian.org/pkg-perl/packages/libdatetime-timezone-perl.git
+Testsuite: autopkgtest-pkg-perl
 Homepage: http://datetime.perl.org/
 
 Package: libdatetime-timezone-perl
@@ -30,6 +31,8 @@ Depends: ${misc:Depends},
          libclass-singleton-perl,
          liblist-allutils-perl,
          libparams-validate-perl
+# no Depends to avoid circular dependency
+Recommends: libdatetime-perl
 Description: framework exposing the Olson time zone database to Perl
  DateTime::TimeZone is a Perl module framework providing an interface to the
  Olson time zone database. It exposes the database as a set of modules, one
