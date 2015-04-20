@@ -1,3 +1,12 @@
+libdatetime-timezone-perl (1:1.75-2+2015c) unstable; urgency=medium
+
+  * Update to Olson database version 2015c.
+    Add patch debian/patches olson-2015c, which updates the timezone *.pm
+    files, using upstream's tools/parse_olson script.
+    This update contains contemporary changes for Egypt.
+
+ -- gregor herrmann <gregoa@debian.org>  Tue, 14 Apr 2015 18:49:09 +0200
+
 libdatetime-timezone-perl (1:1.75-2+2015b) unstable; urgency=medium
 
   * Update to Olson database version 2015b.
