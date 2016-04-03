@@ -1,3 +1,34 @@
+libdatetime-timezone-perl (1:1.75-2+2016c) jessie; urgency=medium
+
+  * Update to Olson database version 2016c.
+    Add patch debian/patches/olson-2016c, which updates the timezone *.pm
+    files, using upstream's tools/parse_olson script.
+    This update contains contemporary changes for Azerbaijan and Chile.
+
+ -- gregor herrmann <gregoa@debian.org>  Thu, 24 Mar 2016 20:54:49 +0100
+
+libdatetime-timezone-perl (1:1.75-2+2016b) jessie; urgency=medium
+
+  * Update to Olson database version 2016b.
+    Add patch debian/patches/olson-2016b, which updates the timezone *.pm
+    files, using upstream's tools/parse_olson script.
+    This update contains contemporary changes for Russia, Haiti, and
+    Palestine.
+  * Fix spelling of Chita in the previous changelog entry.
+    Thanks to Stepan Golosunov for the bug report. (Closes: #813631)
+
+ -- gregor herrmann <gregoa@debian.org>  Thu, 17 Mar 2016 22:16:16 +0100
+
+libdatetime-timezone-perl (1:1.75-2+2016a) jessie; urgency=medium
+
+  * Update to Olson database version 2016a.
+    Add patch debian/patches/olson-2016a, which updates the timezone *.pm
+    files, using upstream's tools/parse_olson script.
+    This update contains contemporary changes for the Cayman Islands, Iran,
+    and Chita, Russia.
+
+ -- gregor herrmann <gregoa@debian.org>  Wed, 03 Feb 2016 20:40:57 +0100
+
 libdatetime-timezone-perl (1:1.75-2+2015g) jessie; urgency=medium
 
   * Update to Olson database version 2015g.
