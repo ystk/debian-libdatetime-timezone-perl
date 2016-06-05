@@ -1,3 +1,12 @@
+libdatetime-timezone-perl (1:1.75-2+2016d) jessie; urgency=medium
+
+  * Update to Olson database version 2016d.
+    Add patch debian/patches/olson-2016d, which updates the timezone *.pm
+    files, using upstream's tools/parse_olson script.
+    This update contains contemporary changes for Russia and Venezuela.
+
+ -- gregor herrmann <gregoa@debian.org>  Thu, 28 Apr 2016 13:29:34 +0200
+
 libdatetime-timezone-perl (1:1.75-2+2016c) jessie; urgency=medium
 
   * Update to Olson database version 2016c.
