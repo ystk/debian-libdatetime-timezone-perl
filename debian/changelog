@@ -1,3 +1,22 @@
+libdatetime-timezone-perl (1:1.75-2+2016f) jessie; urgency=medium
+
+  * Update to Olson database version 2016f.
+    Add patch debian/patches olson-2016f, which updates the timezone *.pm
+    files, using upstream's tools/parse_olson script.
+    This update contains contemporary changes for Africa/Cairo and
+    Asia/Novosibirsk.
+
+ -- gregor herrmann <gregoa@debian.org>  Thu, 07 Jul 2016 19:18:29 +0200
+
+libdatetime-timezone-perl (1:1.75-2+2016e) jessie; urgency=medium
+
+  * Update to Olson database version 2016e.
+    Add patch debian/patches/olson-2016e, which updates the timezone *.pm
+    files, using upstream's tools/parse_olson script.
+    This update contains contemporary changes for Egypt.
+
+ -- gregor herrmann <gregoa@debian.org>  Sun, 26 Jun 2016 17:53:04 +0200
+
 libdatetime-timezone-perl (1:1.75-2+2016d) jessie; urgency=medium
 
   * Update to Olson database version 2016d.
