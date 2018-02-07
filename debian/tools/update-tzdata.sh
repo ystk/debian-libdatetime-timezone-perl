@@ -51,9 +51,10 @@ popd
 
 perl tools/parse_olson --dir debian/tzdata --version $updbversion --clean
 
-# add VERSION to files
+# add VERSION to files; fix Inf
 for f in $(find lib/DateTime -name "*.pm"); do
 	grep -q "::VERSION = '$dttzversion';" $f && continue
 	module=$(echo $f | perl -pe 's{lib/DateTime/TimeZone/(.+)(?:(/.+))?.pm}{DateTime/TimeZone/$1$2}; s{/}{::}g;')
 	perl -pi -e "s{package $module;\s+}{$&\\\$${module}::VERSION = '$dttzversion';}m" $f
+	perl -pi -e 's|-Inf|DateTime::TimeZone::NEG_INFINITY|g;s|Inf|DateTime::TimeZone::INFINITY|g' $f
 done

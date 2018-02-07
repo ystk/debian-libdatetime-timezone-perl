@@ -1,3 +1,61 @@
+libdatetime-timezone-perl (1:1.75-2+2017c) jessie; urgency=medium
+
+  * Update to Olson database version 2017c.
+    This update contains contemporary changes for Northern Cyprus, Fiji,
+    Namibia, Sudan, Tonga, and Turks & Caicos.
+
+ -- gregor herrmann <gregoa@debian.org>  Tue, 24 Oct 2017 16:28:29 +0200
+
+libdatetime-timezone-perl (1:1.75-2+2017b) jessie; urgency=medium
+
+  * Update to Olson database version 2017b.
+    This update contains contemporary changes for Haiti.
+
+ -- gregor herrmann <gregoa@debian.org>  Sun, 02 Apr 2017 22:32:45 +0200
+
+libdatetime-timezone-perl (1:1.75-2+2017a) jessie; urgency=medium
+
+  * Update to Olson database version 2017a.
+    This update contains contemporary changes to Mongolia and Chile.
+
+ -- gregor herrmann <gregoa@debian.org>  Thu, 09 Mar 2017 23:26:36 +0100
+
+libdatetime-timezone-perl (1:1.75-2+2016j) jessie; urgency=medium
+
+  * Update to Olson database version 2016j.
+    This update contains contemporary changes to Europe/Saratov.
+
+ -- gregor herrmann <gregoa@debian.org>  Thu, 24 Nov 2016 19:49:22 +0100
+
+libdatetime-timezone-perl (1:1.75-2+2016i) jessie; urgency=medium
+
+  * Update to Olson database version 2016i.
+    This update contains contemporary changes to Pacific/Tongatapu,
+    Antarctica/Casey, and Asia/Famagusta (new).
+  * Update debian/tools/update-tzdata.sh helper script.
+    Update handling of -Inf/Inf.
+    (This script is only used  manually for updating Olson database data.)
+
+ -- gregor herrmann <gregoa@debian.org>  Sun, 06 Nov 2016 15:04:52 +0100
+
+libdatetime-timezone-perl (1:1.75-2+2016h) jessie; urgency=medium
+
+  * Update to Olson database version 2016h.
+    Add patch debian/patches/olson-2016h, which updates the timezone *.pm
+    files, using upstream's tools/parse_olson script.
+    This update contains contemporary changes for Palestine.
+
+ -- gregor herrmann <gregoa@debian.org>  Sat, 22 Oct 2016 14:42:55 +0200
+
+libdatetime-timezone-perl (1:1.75-2+2016g) jessie; urgency=medium
+
+  * Update to Olson database version 2016g.
+    Add patch debian/patches/olson-2016g, which updates the timezone *.pm
+    files, using upstream's tools/parse_olson script.
+    This update contains contemporary changes for Europe/Istanbul.
+
+ -- gregor herrmann <gregoa@debian.org>  Tue, 27 Sep 2016 23:20:52 +0200
+
 libdatetime-timezone-perl (1:1.75-2+2016f) jessie; urgency=medium
 
   * Update to Olson database version 2016f.
