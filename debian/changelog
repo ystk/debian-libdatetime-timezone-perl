@@ -1,3 +1,9 @@
+libdatetime-timezone-perl (1:1.75-2+2019a) jessie-security; urgency=medium
+
+  * Update to Olson database version 2019a.
+
+ -- Emilio Pozuelo Monfort <pochu@debian.org>  Mon, 01 Apr 2019 11:12:02 +0200
+
 libdatetime-timezone-perl (1:1.75-2+2018i) jessie-security; urgency=medium
 
   * Update to Olson database version 2018i.
