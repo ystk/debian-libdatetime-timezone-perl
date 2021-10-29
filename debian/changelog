@@ -1,3 +1,9 @@
+libdatetime-timezone-perl (1:1.75-2+2021e) jessie-security; urgency=medium
+
+  * Update to Olson database version 2021e.
+
+ -- Emilio Pozuelo Monfort <pochu@debian.org>  Fri, 29 Oct 2021 11:17:54 +0200
+
 libdatetime-timezone-perl (1:1.75-2+2021a) jessie-security; urgency=medium
 
   * Update to Olson database version 2021a.
