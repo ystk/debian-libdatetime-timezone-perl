@@ -1,3 +1,9 @@
+libdatetime-timezone-perl (1:1.75-2+2022e) jessie; urgency=medium
+
+  * Update to Olson database version 2022e.
+
+ -- Emilio Pozuelo Monfort <pochu@debian.org>  Wed, 26 Oct 2022 18:19:50 +0200
+
 libdatetime-timezone-perl (1:1.75-2+2022d) jessie; urgency=medium
 
   * Update to Olson database version 2022d.
